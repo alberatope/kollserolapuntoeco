@@ -1,0 +1,14 @@
+<table width="88%" border="0" align="center" style="margin-top: 50px;margin-bottom:20px" align="center" cellpadding="2" cellspacing="1">
+<tr><td width="100%" style="display:flex;justify-content:space-around;flex-flow: row wrap;">
+		<?
+		
+		//Desplegamos las casillas del kolectivo
+		
+		$template = implode("", file("casillasmisemana.html"));
+		
+		foreach ($semana as $s){		
+			eval("?>".$template."<?");
+		}
+		?>
+</td></tr>
+</table>

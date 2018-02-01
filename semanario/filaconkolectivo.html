@@ -1,0 +1,17 @@
+<?//Por alguna razón no le llegaban las constantes al script...
+require('../constantes.php');?>
+
+<tr> 
+	<td width="19.5%" align="center" class="casillaestilada" bgcolor="<?=$colortronco?>" onclick="javascript:pantallita('kol<?=$id?>');" onmouseover="this.style.opacity = 1;" onmouseout="this.style.opacity =0.8;">
+		<?=$kolectivo?><div align="center"><font size="-1"><?=$mensaje?></font></div>
+	</td>
+	
+	<?//Desplegamos las casillas del kolectivo
+	$semana=['L','M','X','J','V','S','D'];
+	foreach ($semana as $s){
+		$template = implode("", file("casillasemana.html"));
+		eval("?>".$template."<?");
+	}
+	?>
+
+</tr>

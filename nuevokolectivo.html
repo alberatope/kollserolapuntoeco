@@ -1,0 +1,33 @@
+<form id="sumarkolectivo" name="sumarkolectivo" action="/ficha/sumarkolectivo.php" method="post">
+
+	<table width="90%" border="1 black" style="border-collapse:collapse;margin-bottom:30px;margin-top:30px;" align="center" cellpadding="2" cellspacing="2">
+	
+		<tr><td  colspan="3" class="cabeceragrande">
+			<text id='txt14' class='maquina120'></text>
+			<div class='descripciones'><text id='txt38'></text></div>
+		
+		</td></tr>
+	
+			<tr class="colorfondoformu"> 
+				<td><input type="text" id ="inputkolectivo" name="kolectivo" class="inputtransparente" placeholder="Nombre del Kolectivo (campo necesario)"></td>
+				<td width="30%"><input type="text" name="web" class="inputtransparente" placeholder="web"><input type="text" name="email" class="inputtransparente" placeholder="email"></td>
+				<td width="30%"><input type="text" name="direccion" class="inputtransparente" placeholder="dirección"></td>
+			</tr>
+			
+			<tr class="colorfondoformu">
+				<td><textarea name="mensaje" style="width:100%;" rows="4" class="inputtransparente" placeholder="Descripción mini"></textarea></td>
+				<td  colspan="2">
+					<table width="100%"><tr>
+						<td>
+							<input id="inputpazz" type="password" name="pazz" class="inputpazz" placeholder="pass (campo necesario)"><br>
+							<text id='txt15' class="detallepazz"></text>
+						</td>
+						<td align="right"><div class="botonseleccion" onclick="javascript:subirseguro();">Añadir</div></td>
+					</tr></table>
+		
+				</td>
+			</tr>
+		
+	</table>
+
+</form>

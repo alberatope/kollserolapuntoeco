@@ -1,0 +1,36 @@
+<div id="pantallitakol<?=$id?>" class="pantallita" style="display:none;">
+	
+	<text class="maquina90"><font size="+1"><?=$kolectivo?></font><br><?=$mensaje?></text>
+	
+	<hr class="barritaentrecosas">
+
+
+		<table width="100%">
+			<tr>
+				<td colspan="2" width="33%">
+					<text class="detallepazz">web: </text>
+					<div style="overflow:hidden;text-overflow:ellipsis;"><font size="-1"><a href="http://<?=$web;?>"><u><?=$web?></u></a></font></div></td>
+				</td>
+			</tr>
+			<tr>			
+				<td>
+					<text class="detallepazz">email:</text><br>
+					<div style="overflow:hidden;text-overflow:ellipsis;"><font size="-1"><?=$email?></font></div>
+				</td>
+				<td>
+					<text class="detallepazz">dirección:</text><br>
+					<div style="overflow:hidden;text-overflow:ellipsis;"><font size="-1"><?=$direccion?></font></div>
+				</td>
+			</tr>
+		</table>
+		
+	<hr class="barritaentrecosas">
+
+	
+	<text class="maquina90"><?=$comunicado?></text>
+
+	<table width="100%"><tr><td>
+		<div class="botonseleccion" style="float:right;border:0;" onclick="javascript:pantallita('kol<?=$id?>');">Visto</div>
+	</td></tr></table>
+
+</div>

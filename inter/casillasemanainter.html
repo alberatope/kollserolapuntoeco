@@ -1,0 +1,31 @@
+<!--Este html está hermanado con /ficha/casillasmisemana.html y /semanario/casillasemana.html
+Se podrían combinar. Por ahora:
+Este describe las casillas del semanario 
+/semanario/casillasemana.html : de todos los kolectivos cuando se ven en el semanario,
+/ficha/casillasmisemana.html : en la ventana de edicion del kolectivo logeado-->
+
+
+<?//Por alguna razón no le llegaban las constantes al script...
+require('../constantes.php');
+?>
+
+
+<td width="11.5%" valign="center" align="center" class="casillaestilada" bgcolor="<?=${'color'.$s}?>">
+	
+
+		<div align="left" class="estilohoras"><?=${'h'.$s}?></div><div align='left' class="estilocosas"><?=$$s?></div>
+		
+		<?if (empty(${$s.'2'})==false and empty(${$s})==false) print"<hr class='barritaentrecosas'>";?>
+		
+		<div align='left' class='estilohoras'><?=${'h'.$s.'2'}?></div><div align='left' class='estilocosas'><?=${$s.'2'}?></div>
+
+		<div class="losflyers" align="center">
+
+		<hr class='barritaentrecosas' style="<?if (empty(${'flyer'.$s})==true) print "display:none"; else print "display:block";?>">
+
+		<img width="110px" src="/kolectivos/<?=$id?>/flyers/<?=${'flyer'.$s}?>" class='estilominiflyer' style="opacity:0.9;<?if (empty(${'flyer'.$s})==true) print "display:none"; else print "display:inline";?>" onmouseover="javascript:this.style.opacity = 1;" onmouseout="this.style.opacity = 0.9;"></img>
+
+		</div>
+
+
+</td>

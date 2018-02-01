@@ -1,0 +1,3 @@
+<?if ($id == 0) echo "<table width='90%' border='0' align='center' cellpadding='2' cellspacing='2'><tr><td id='cabeceragrandedelforo' class='cabeceragrandedelforo'><text style='color:#424242'>Nuevo Mensaje:</text></td></tr></table>";
+else echo "<table width='90%' border='0' align='center' cellpadding='2' cellspacing='2'><tr><td id='cabeceragrandedelforo' class='cabeceragrandedelforo'><text style='color:#424242'>Respondiendo a: </text><text style='font:100% Arial'>".$titulooriginal." </text></td></tr></table>";
+?>

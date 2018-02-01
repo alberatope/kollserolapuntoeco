@@ -1,0 +1,39 @@
+
+<table class="maquina100" width="90%" border="0" style="border-collapse:collapse;border:1px solid black;margin-top:20px;margin-bottom:20px" align="center" cellpadding="" cellspacing="1"><tr>
+
+    <td width="30%">
+		
+	<!--Botón cargar eventos futuros-->
+		<form method='POST' action='?d=flyers'>		
+			<input type='hidden' name='t' value='futuro'>
+			<input id='marcadorLengua1' type='hidden' name='lengua' value=''>
+			<button type='submit' id='botonfuturo' class="botonidioma <?if ($_POST['t']=='futuro' or empty($_POST['t'])) print 'botonidiomaelecto';?>" style="width:96%;"><text id='txt35'></text></button>
+		</form>
+		
+	</td>
+	<td width ="30%">
+		
+	<!--Botón cargar eventos pasados-->
+		<form method='POST' action='?d=flyers'>	
+			<input type='hidden' name='t' value='pasado'>
+			<input id='marcadorLengua2' type='hidden' name='lengua' value=''>
+			<button type='submit' id='botonpasado' class="botonidioma <?if ($_POST['t']=='pasado') print 'botonidiomaelecto';?>" style="width:96%;"><text id='txt36'></text></button>
+		</form>
+		
+	</td>
+	<td width ="30%">
+
+		<text id="txt37"></text><br>
+		
+		<select class="selectorfiltro" name="filtrokolectivo" id="filtroporkolectivo" style="float:left;width:96%">					
+			<?/* Cargamos los kolectivos availables*/
+			$sql = "SELECT kolectivo FROM semanario";
+			$k = mysql_query($sql, $con);
+			print "<option value='todos' selected>TODOS</option>";
+			while($row = mysql_fetch_assoc($k)) print "<option value='".$row['kolectivo']."'>".$row['kolectivo']."</option>";
+			?>
+		</select>
+		
+	</td>
+	
+</tr></table>

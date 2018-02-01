@@ -1,0 +1,24 @@
+<!--Este html está hermanado con /semanario/casillasemana.html
+Se podrían combinar. Por ahora:
+Este describe las casillas del semanario 
+/semanario/casillasemana.html : de todos los kolectivos cuando se ven en el semanario,
+/ficha/casillasmisemana.html : en la ventana de edicion del kolectivo logeado-->
+
+
+
+	<table class="casillaestilada" bgcolor="<?=${'color'.$s}?>" style="border:1px solid black;margin:5px" onclick="javascript:editardeunoenuno('formueditar<?=$s?>');" onmouseover="this.style.opacity = 1;" onmouseout="this.style.opacity =0.8;">
+		<tr><td><?=$losdias2[$s]?><hr class='barritaentrecosas'></td></tr>
+		<tr><td>
+			<div align="left" class="estilohoras"><?=${'h'.$s}?></div><div class="estilocosas"><?=$$s?></div>
+			<?if (empty(${$s.'2'})==false and empty(${$s})==false) print"<hr class='barritaentrecosas'>";?>
+			<div align='left' class='estilohoras'><?=${'h'.$s.'2'}?></div><div class='estilocosas'><?=${$s.'2'}?></div>
+		</td></tr>
+		
+		<tr><td>
+			<div align="center" style="<?if (empty(${'flyer'.$s})==true) print "display:none"; else print "display:block";?>">
+			<hr class='barritaentrecosas'>
+			<img width="110px" src="/kolectivos/<?=$_SESSION['idkol']?>/flyers/<?=${'flyer'.$s}?>" class='estilominiflyer' style="opacity:0.9" onmouseover="javascript:this.style.opacity = 1;" onmouseout="this.style.opacity = 0.9;"></img>
+			</div>	
+		</td></tr>
+		
+	</table>

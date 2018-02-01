@@ -1,0 +1,43 @@
+<div id="pantallita<?=$s.$id?>" class="pantallita" width="100%" style="display:none;max-height:100%;">
+	
+	
+	<table width="100%" border="0" style="border-collapse:collapse;margin-bottom:-8px"  cellpadding="2" cellspacing="1">
+		<tr>
+			<td align="center" valign="middle"><text class="maquina90"><font size="+1">los <?=$losdiasplural[$s]?></font></text></td>
+			<td align="center" valign="middle"><text class="maquina90"><font size="+1">en</font></text></td>
+			<td onclick="javascript:pantallita('kol<?=$id?>');" align="center" valign="baseline" bgcolor="#bdbdbd" style="opacity:0.8;" onmouseover="this.style.opacity = 1;" onmouseout="this.style.opacity =0.8;"><text class="maquina90"><font size="+1"><?=$kolectivo?></font></text></td>		
+		</tr>
+	</table>
+
+	<hr class="barritaentrecosas">
+
+	<table width="90%" border="0" style="border-collapse:collapse;" align="center" cellpadding="10" cellspacing="1">
+		
+		<tr>
+			<td colspan="3">
+				<text class="estilohorasenpantallita"><?=${'h'.$s}?></text>
+				<text class="estilocosasenpantallita"><?=$$s?></text>
+			</td>
+
+		</tr>
+
+		<tr>
+			<td colspan="3">
+				<text class="estilohorasenpantallita"><?=${'h'.$s.'2'}?></text>
+				<text class="estilocosasenpantallita"><?=${$s.'2'}?></text>
+			</td>
+
+		</tr>
+		
+		<tr><td colspan="3">
+			<div id="miniflyer<?=$s.$id?>"  align="center" style="<?if (empty(${'flyer'.$s})==true) print "display:none"; else print "display:block";?>">
+				<a href="/kolectivos/<?=$id?>/flyers/<?=${'flyer'.$s}?>"><img src="/kolectivos/<?=$id?>/flyers/<?=${'flyer'.$s}?>" class='estiloflyer' style="opacity:0.8" onmouseover="javascript:this.style.opacity = 1;" onmouseout="this.style.opacity = 0.8;"></img></a>
+			</div>
+		</td></tr>
+		
+		<tr><td colspan="3">
+				<div class="botonseleccion" style="float:right;border:0;" onclick="javascript:pantallita('<?=$s.$id?>');">Visto</div>
+		</td></tr>
+	</table>
+
+</div>

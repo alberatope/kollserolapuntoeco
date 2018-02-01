@@ -1,0 +1,44 @@
+
+<form id="looog" action="/ficha/toctoc.php" name="looog" method="post">
+	
+	<table width="90%" border="0" style="border-collapse:collapse;border:1px solid black;margin-top:40px;" align="center" cellpadding="2" cellspacing="2"><tr class="color2">
+
+		<!--1) Selector de usuario-->
+			<td width="40%">
+				<select class="inputtransparente" name="kolectivo" id="choosenkol" style="min-height:30px;">					
+					<?/* Cargamos los kolectivos availables*/
+					$sql = "SELECT kolectivo FROM semanario";
+					$k = mysql_query($sql, $con);
+					print '<option value="" disabled selected></option>';
+					while($row = mysql_fetch_assoc($k)) print "<option value='".$row['kolectivo']."'>".$row['kolectivo']."</option>";
+					?>
+				</select>
+			</td>
+			
+		<!--2) Caja para introducir pass-->
+			<td width="40%"><input type="password" name="pazzinside" id="pazzinside" class="inputtransparente" style="min-height:30px;" placeholder="pass del kolectivo"></td>
+		
+		<!--3) Botón Logearse-->
+			<td width="20%"><div class="botonlog" style="float:right;" onclick="javascript:logtest();">Login</div></td>
+
+	</tr></table>
+	
+</form>	
+
+
+<script language="javascript">
+
+<!-- comprovaciones para entrar en la ventana de edicion -->
+function logtest(){
+
+	var kol = document.getElementById('choosenkol');
+	if (kol.value == '') {alert('¡Elije el colectivo que quieres editar!'); exit();}
+
+	var paz = document.getElementById('pazzinside');
+	if (paz.value == '') {alert('y el pass, que?'); exit();}
+
+
+	document.getElementById('looog').submit();
+}
+
+</script>

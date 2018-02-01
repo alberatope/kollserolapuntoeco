@@ -1,0 +1,86 @@
+<!--
+La cabecera se divide en dos zonas: zona pública (a la izquierda, verde) y zona Login (a la derecha, azul)
+La zona loggin tiene dos estados: sin sesión y con sesión-->
+
+<?
+//cargamos las variables de sesión:
+session_start();
+
+
+//estilo de los botones de la zona loggin CON SESIÓN INICIADA
+if (isset($_SESSION['idkol']) and isset($_SESSION['kol'])) {
+	$textobotonet = $_SESSION['kol'];
+	$estilob1 ="display:none;";	
+	$estilob2 ="display:none;";		
+	$estilob3 ="width:70%;";		
+	$estilob4 ="width:30%;";		
+	}
+//estilo de los botones de la zona loggin SIN SESIÓN INICIADA
+else {
+	$estilob3 ="display:none;";	
+	$estilob4 ="display:none;";	
+	}	
+?>
+
+
+
+	
+	<table width="100%" border="1 grey" style="border-collapse:collapse;"><tr>
+	
+	<!--1) Zona Pública-->
+		
+		<td width="68%" align="left" class="color1">
+			<table width="100%"><tr>
+				<td><img src="k.png" style="margin-right:10px"></td>
+				<td><text id="txt1" class="maquina120"></text></td>
+				<td>
+					<div id='botoncas' class="botonidioma" onclick="alcas();">cas</div>
+					<div id='botoncat' class="botonidioma" onclick="alcat();">cat</div>					
+				</td>
+			</tr></table>
+			
+			<div class="barrabotones">
+			
+				<div id='botoncuadroflyers' class="botonseleccion" style="width:50%; float:left" onclick="javascript:mostrar('cuadroflyers')">
+					<text id ='txt30' class="textotitulin"></text>
+				</div>
+				
+				<div id='botoncuadrosemana' class="botonseleccion" style="width:50%; float:left" onclick="javascript:mostrar('cuadrosemana')">
+					<text id ='txt2' class="textotitulin"></text>
+				</div>
+				
+				<div id='botoncuadroforo' class="botonseleccion" style="width:50%; float:left;" onclick="javascript:mostrar('cuadroforo')">
+					<text id='txt3' class="textotitulin"></text>
+				</div>
+			</div>
+		</td>
+		
+	<!--2) Zona Login-->
+		
+		<td width="28%" class="color2">
+		
+			<text id='txt4' class="maquina100"></text>
+		
+			<div class="barrabotones">
+
+				<div id='botoncuadrolog' class="botonlog" style="<?=$estilob1?>" onclick="javascript:mostrar('cuadrolog');">
+					<text class="textotitulin">Log</text>
+				</div>
+
+				<div id='botoncuadronuevo' class="botonlog" style="<?=$estilob2?>" onclick="javascript:mostrar('cuadronuevo');">
+					<text id ='txt5' class="textotitulin"></text>
+				</div>
+				
+				<div id='botoncuadroficha' class="botonlog" style="<?=$estilob3?>" onclick="javascript:mostrar('cuadroficha');">
+					<text class="textotitulin"><?=$textobotonet;?></text>
+				</div>
+				
+				<div id='botoncuadrologout' class='botonlog' style="<?=$estilob4?>" onclick="javascript:chau();">
+					<text id ='txt13' class="textotitulin"></text>
+				</div>
+	
+				
+			</div>
+		</td>
+			
+	</tr></table>

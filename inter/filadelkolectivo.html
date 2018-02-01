@@ -1,0 +1,14 @@
+<?//Por alguna razón no le llegaban las constantes al script...
+require('../constantes.php');?>
+
+<tr> 
+	
+	<?//Desplegamos las casillas del kolectivo
+
+	foreach ($semana as $s){
+		$template = implode("", file("casillasemanainter.html"));
+		eval("?>".$template."<?");
+	}
+	?>
+
+</tr>

@@ -1,0 +1,38 @@
+<?
+//leemos la fechaCaducidad en variables humanoides
+list ($dia2,$mesnumerico2,$ano2,$nombremes2,$nombredia2) = leerlafecha($fechaCaducidad,'cas');
+
+//leemos la fechaInicio solamente si está definida
+if ($unDosVariosDias != '1') list ($dia1,$mesnumerico1,$ano1,$nombremes1,$nombredia1) = leerlafecha($fechaInicio,'cas');
+
+?>
+
+<div class='cajitaflyer'>
+
+	<!--Fechas--------ESTO NECESITA QUE CAMBIEMOS EL SISTEMA DE TRADUCCIÓN A CLASS EN LUGAR DE ID
+	pues cada flyer repite el bucle y sus textos tienen la misma id que los de los otros flyers ------------------------> 
+
+		
+			<!--<text id='txt46' <?//if ($unDosVariosDias != '3') print "style='display:none'";?>></text>-->
+			
+		<div class='fechitaflyer' <?if ($unDosVariosDias != '2' and $unDosVariosDias != '3') print "style='display:none'";?>><?print $nombredia1.' '.$dia1.'<br>de '.$nombremes1;?></div>
+			
+			<!--<text id='txt47' <?//if ($unDosVariosDias != '3') print "style='display:none'";?>></text>-->
+			<!--<text id='txt48' <?//if ($unDosVariosDias != '2') print "style='display:none'";?>></text>-->
+		
+		<?//SOLUCIóN TEMPORAL: si el evento incluye más de una fecha escribimos "a" entre la fecha de inicio y la de fin
+		if ($unDosVariosDias == '2' or $unDosVariosDias == '3') print "<div style='float:left;position:relative;top:16px;'>a</div>";?>
+			
+		<div class='fechitaflyer'><?print $nombredia2.' '.$dia2.'<br>de '.$nombremes2;?></div>
+
+	<!--Flyer (imagen)-->
+
+		<a href="../nubedeflyers/<?=$archivoFlyer?>"><img width='280px' src="../nubedeflyers/<?=$archivoFlyer?>"></a>
+
+		<hr class='barritaentrecosas'>
+
+	<!--Info al pie del flyer-->
+
+		<text class='maquina70'>Publicado el <?=$fechaPublicacion?> por <?=$publicador?></text>
+
+</div>

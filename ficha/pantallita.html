@@ -1,0 +1,43 @@
+
+<!--Lo de arriba ponerlo en el archivo php en el que se quiera poner la pantallita. Todo lo demas (abajo) es pantallita.html-->
+
+
+<div id="pantallita<?=$s.$kolectivo?>" class="pantallita" style="display:none;">
+	<text class="cabeceragrande"><h2><?=$kolectivo?></h2>Actividades para los <?=$s?></text>
+	<table width="90%" height="100%" border="0" style="border-collapse:collapse;" align="center" cellpadding="" cellspacing="1">
+		<tr>
+			<td>
+	
+			<table class="cuadritos" cellpadding="7">
+				<tr>
+					<td>Horario</td>
+					<td width="80%" align="center" class="estilokol"><input id="edi_h<?=$s?>" name="h<?=$s?>" value="<?=${'h'.$s}?>" style="width:100%;" class="inputpeque"></td>
+				</tr>
+				<tr>
+					<td>Actividad</td>
+					<td width="80%" align="center" class="estilokol"><textarea id="edi_<?=$s?>" name="<?=$s?>" value="<?=$$s?>" style="width:100%;" rows="4" class="inputpeque" ><?=$$s?></textarea></td>
+				</tr>
+			</table>
+			
+			<hr>
+			
+			 <table class="cuadritos" cellpadding="7">
+				<tr>
+					<td>Horario</td>
+					<td width="80%" align="center" class="estilokol"><input id="edi_h<?=$s?>2" name="h<?=$s?>2" value="<?=${'h'.$s.'2'}?>" style="width:100%;" class="inputpeque"></td>
+				</tr>
+				<tr>
+					<td>Actividad</td>
+					<td width="80%" align="center" class="estilokol"><textarea id="edi_<?=$s?>2"  name="<?=$s?>2" value="<?=${$s.'2'}?>" style="width:100%;" rows="4" class="inputpeque" ><?=${$s.'2'}?></textarea></td>
+				</tr>
+			</table>
+
+			</td>
+		
+			<td>
+				<div class="botonseleccion" style="float:right;border:0;" onclick="javascript:actualizarcasillas('<?=$s?>');">Aceptar</div>
+				<div class="botonseleccion" style="float:right;border:0;" onclick="javascript:pantallita('<?=$s?>');">Cancelar</div>
+			</td>
+		</tr>
+	</table>
+</div>
