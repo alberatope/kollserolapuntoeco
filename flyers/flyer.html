@@ -13,27 +13,23 @@ if ($unDosVariosDias != '1') list ($dia1,$mesnumerico1,$ano1,$nombremes1,$nombre
 		
 		<!--Fechas--------ESTO NECESITA QUE CAMBIEMOS EL SISTEMA DE TRADUCCIÓN A CLASS EN LUGAR DE ID
 		pues cada flyer repite el bucle y sus textos tienen la misma id que los de los otros flyers ------------------------> 
-		
-				<!--<text id='txt47' <?//if ($unDosVariosDias != '3') print "style='display:none'";?>></text>-->
-				<!--<text id='txt48' <?//if ($unDosVariosDias != '2') print "style='display:none'";?>></text>-->
-			
+	
 			<td style='display:inline-flex;flex-wrap:wrap;align-items:center'>		
-				
-				
+
 				<div style='display:flex;align-items:center'><!--FECHA INICIO:-->
 	
 					<?
-					if ($unDosVariosDias == '3') print "<text style='font-size:small'>del</text>";
-					if ($unDosVariosDias != '1') print "<div class='fechitaflyer'>$nombredia1 $dia1 <text style='font-size:small'>$nombremes1</text></div>";?>
+					if ($unDosVariosDias == '3') print "<text class='maquina70'>del</text>";
+					if ($unDosVariosDias != '1') print "<div class='fechitaflyer'><b>$dia1 $nombremes1 </b><br><text>$nombredia1</text></div>";?>
 				
 				</div>
 				
 				<div style='display:flex;align-items:center'><!--FECHA FIN:-->
 					
 					<?
-					if ($unDosVariosDias == '2') print "<text style='font-size:small'>y</text>";
-					if ($unDosVariosDias == '3') print "<text style='font-size:small'>al</text>";							
-					print "<div class='fechitaflyer'>$nombredia2 $dia2 <text style='font-size:small'>$nombremes2</text></div>";?>
+					if ($unDosVariosDias == '2') print "<text class='maquina70'>y</text>";
+					if ($unDosVariosDias == '3') print "<text class='maquina70'>al</text>";							
+					print "<div class='fechitaflyer'><b>$dia2 $nombremes2 </b><br><text>$nombredia2</text></div>";?>
 
 				</div>
 			
@@ -42,7 +38,7 @@ if ($unDosVariosDias != '1') list ($dia1,$mesnumerico1,$ano1,$nombremes1,$nombre
 		<!--Flyer (imagen)-->
 
 			<td width='42%' rowspan='2'>
-				<a href="../nubedeflyers/<?=$archivoFlyer?>"><img width='130px' style='margin:4px;max-height:180px' border='1' src="../nubedeflyers/<?=$archivoFlyer?>"></a>
+				<a href="../nubedeflyers/<?=$archivoFlyer?>"><img width='112px' style='margin:4px;max-height:180px' border='1' src="../nubedeflyers/<?=$archivoFlyer?>"></a>
 			</td></tr>
 
 			
@@ -58,6 +54,6 @@ if ($unDosVariosDias != '1') list ($dia1,$mesnumerico1,$ano1,$nombremes1,$nombre
 	
 		<hr class='barritaentrecosas'>
 		
-		<text class='maquina70'>Publicado por</text><text style='font-size:small'> <?=$publicador?></text>
+		<text class='maquina70'>Publicado por</text><text> <?=$publicador?></text>
 
 </div>
