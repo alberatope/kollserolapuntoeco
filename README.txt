@@ -4,7 +4,7 @@ Bienvenid@ al repositorio de software colectivo y local de la asamblea de Kollse
 
 Utilizar herramientas web propias nos permitirá adaptarlas constantemente a nuestras necesidades más particulares.
 
-Por ahora son tres cosas: 
+Por ahora son tres herramientas: 
 
 1)la nube de flyers - base de datos para compartir flyers de eventos en kollserola.
 2)el info-kollserola - info y tabla de actividades semanales de colectivos. Log-in para editar.
@@ -13,14 +13,23 @@ Por ahora son tres cosas:
 Sistema de archivos del repositorio:
 
 / - archivos compartidos y archivos para la portada de la web kollserola.eco
-/flyers - archivos para la nube de flyers
-/semanario - archivos para el calendario semanal 
+	ARCHIVOS GLOBALES:
+	-> supercss.css: Hoja de estilos para toda la página
+	-> kollserola.js: scripts javascript para toda la página
+	-> funciones.php; constantes.php: funciones y constantes php para toda la página
+
+/flyers - archivos que gestionan la nube de flyers
+
+/semanario - archivos que gestionan el calendario semanal 
+
 /foro - archivos del foro
+
 /ficha - archivos para la zona con loggin
+
 /inter - archivos del plug-in para mostrar el calendario semanal en otra web
 
 IMPORTANTE:
 Los archivos configuracionx.php y configuracionftpx.php han de ser editados con los pass de la mysql y ftp
-y transformados en configuracion y configuracionftp
+y transformados en configuracion.php y configuracionftp.php
 ------------------------------------------------------------------------------------------------------------------------
 para cualquier consulta o feedback, ave@openmailbox.org

@@ -9,30 +9,55 @@ if ($unDosVariosDias != '1') list ($dia1,$mesnumerico1,$ano1,$nombremes1,$nombre
 
 <div class='cajitaflyer'>
 
-	<!--Fechas--------ESTO NECESITA QUE CAMBIEMOS EL SISTEMA DE TRADUCCIÓN A CLASS EN LUGAR DE ID
-	pues cada flyer repite el bucle y sus textos tienen la misma id que los de los otros flyers ------------------------> 
-
+	<table width='100%'><tr>
 		
-			<!--<text id='txt46' <?//if ($unDosVariosDias != '3') print "style='display:none'";?>></text>-->
-			
-		<div class='fechitaflyer' <?if ($unDosVariosDias != '2' and $unDosVariosDias != '3') print "style='display:none'";?>><?print $nombredia1.' '.$dia1.'<br>de '.$nombremes1;?></div>
-			
-			<!--<text id='txt47' <?//if ($unDosVariosDias != '3') print "style='display:none'";?>></text>-->
-			<!--<text id='txt48' <?//if ($unDosVariosDias != '2') print "style='display:none'";?>></text>-->
+		<!--Fechas--------ESTO NECESITA QUE CAMBIEMOS EL SISTEMA DE TRADUCCIÓN A CLASS EN LUGAR DE ID
+		pues cada flyer repite el bucle y sus textos tienen la misma id que los de los otros flyers ------------------------> 
 		
-		<?//SOLUCIóN TEMPORAL: si el evento incluye más de una fecha escribimos "a" entre la fecha de inicio y la de fin
-		if ($unDosVariosDias == '2' or $unDosVariosDias == '3') print "<div style='float:left;position:relative;top:16px;'>a</div>";?>
+				<!--<text id='txt47' <?//if ($unDosVariosDias != '3') print "style='display:none'";?>></text>-->
+				<!--<text id='txt48' <?//if ($unDosVariosDias != '2') print "style='display:none'";?>></text>-->
 			
-		<div class='fechitaflyer'><?print $nombredia2.' '.$dia2.'<br>de '.$nombremes2;?></div>
+			<td style='display:inline-flex;flex-wrap:wrap;align-items:center'>		
+				
+				
+				<div style='display:flex;align-items:center'><!--FECHA INICIO:-->
+	
+					<?
+					if ($unDosVariosDias == '3') print "<text style='font-size:small'>del</text>";
+					if ($unDosVariosDias != '1') print "<div class='fechitaflyer'>$nombredia1 $dia1 <text style='font-size:small'>$nombremes1</text></div>";?>
+				
+				</div>
+				
+				<div style='display:flex;align-items:center'><!--FECHA FIN:-->
+					
+					<?
+					if ($unDosVariosDias == '2') print "<text style='font-size:small'>y</text>";
+					if ($unDosVariosDias == '3') print "<text style='font-size:small'>al</text>";							
+					print "<div class='fechitaflyer'>$nombredia2 $dia2 <text style='font-size:small'>$nombremes2</text></div>";?>
 
-	<!--Flyer (imagen)-->
+				</div>
+			
+			</td>
+		
+		<!--Flyer (imagen)-->
 
-		<a href="../nubedeflyers/<?=$archivoFlyer?>"><img width='280px' src="../nubedeflyers/<?=$archivoFlyer?>"></a>
+			<td width='42%' rowspan='2'>
+				<a href="../nubedeflyers/<?=$archivoFlyer?>"><img width='130px' style='margin:4px;max-height:180px' border='1' src="../nubedeflyers/<?=$archivoFlyer?>"></a>
+			</td></tr>
 
+			
+		<!--Título-->
+			
+			<tr><td><?=$titulo;?></td></tr>
+			
+			
+
+	</table>
+		
+	<!--Pie del flyer-->
+	
 		<hr class='barritaentrecosas'>
-
-	<!--Info al pie del flyer-->
-
-		<text class='maquina70'>Publicado el <?=$fechaPublicacion?> por <?=$publicador?></text>
+		
+		<text class='maquina70'>Publicado por</text><text style='font-size:small'> <?=$publicador?></text>
 
 </div>
