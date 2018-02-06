@@ -17,10 +17,12 @@
 require('configuracion.php');//conexión con la mysql
 require('funciones.php');//funciones php
 require('constantes.php');//constantes php
+if (isset($_POST['lengua'])) $lengua = $_POST['lengua']; else $lengua = 'cat';
+if (isset($_GET['d'])) $focus = $_GET['d']; else $focus = 'semana';
 ?>
 
 <!--Al cargar el body, escribimos los textos en catalán por defecto y mostramos la pestaña especificada en $_GET['d']-->
-<body onload="javascript:<?if ($_POST['lengua'] == 'cas') print 'alcas()'; else print'alcat()';?>;carga('<?=$_GET['d']?>');">
+<body onload="javascript:<?if ($lengua == 'cas') print 'alcas()'; else print 'alcat()';?>;carga('<?=$focus?>');">
 
 	<!--1) CABECERA-->
 	<?include 'cabeceraweb.html';?>
@@ -32,10 +34,6 @@ require('constantes.php');//constantes php
 
 	<div id="cuadronuevo" style="display:none"><?include('nuevokolectivo.html');?></div>
 
-	<div id="cuadroflyers" style="display:none"><?chdir($dir.'/flyers'); include('flyers.php');?></div>
-	
-	<div id="cuadroforo" style="display:none"><?chdir($dir.'/foro'); include('indexf.php');?></div>	
-	
 	<div id="cuadrosemana" style="display:none"><?chdir($dir.'/semanario'); include('semanario.php');?></div>
 
 	<div id="cuadroficha" style="display:none"><?chdir($dir.'/ficha');if (isset($_SESSION['idkol']) and isset($_SESSION['kol'])) include ('fichakolectivo.php');?></div>

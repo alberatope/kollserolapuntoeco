@@ -1,5 +1,6 @@
-<!--
-La cabecera se divide en dos zonas: zona pública (a la izquierda, verde) y zona Login (a la derecha, azul)
+<!--cabeceraweb.html:
+
+La cabecera se divide en dos zonas: zona principal (izquierda, gris) y zona Login (derecha, azul)
 La zona loggin tiene dos estados: sin sesión y con sesión-->
 
 <?
@@ -21,41 +22,28 @@ else {
 	$estilob4 ="display:none;";	
 	}	
 ?>
-
-
-
 	
-	<table width="100%" border="1 grey" style="border-collapse:collapse;"><tr>
+<table width="1024px" border="2" class='tablamedia cabeceragrande' align="center" cellpadding="" cellspacing="1"><tr>
 	
-	<!--1) Zona Pública-->
+	<!--1) Zona utiliidades info-kollserola------------------------------------------->
 		
-		<td width="68%" align="left" class="color1">
-			<table width="100%"><tr>
-				<td><img src="k.png" style="margin-right:10px"></td>
-				<td><text id="txt1" class="maquina120"></text></td>
-				<td>
-					<div id='botoncas' class="botonidioma" onclick="alcas();">cas</div>
-					<div id='botoncat' class="botonidioma" onclick="alcat();">cat</div>					
-				</td>
-			</tr></table>
-			
-			<div class="barrabotones">
-			
-				<div id='botoncuadroflyers' class="botonseleccion" style="width:50%; float:left" onclick="javascript:mostrar('cuadroflyers')">
-					<text id ='txt30' class="textotitulin"></text>
-				</div>
-				
-				<div id='botoncuadrosemana' class="botonseleccion" style="width:50%; float:left" onclick="javascript:mostrar('cuadrosemana')">
-					<text id ='txt2' class="textotitulin"></text>
-				</div>
-				
-				<div id='botoncuadroforo' class="botonseleccion" style="width:50%; float:left;" onclick="javascript:mostrar('cuadroforo')">
-					<text id='txt3' class="textotitulin"></text>
-				</div>
+		<td>
+			<div id='botoncuadrosemana' class='botonseleccion' style='width:260px' onclick="javascript:mostrar('cuadrosemana')">
+				<img src='../k.png'>
+				<text id ='txt2' class="textotitulin"></text>
 			</div>
 		</td>
 		
-	<!--2) Zona Login-->
+		<td width='110px' align='center'>
+			<div id='botoncas' class="botonidioma" onclick="alcas();">cas</div>
+			<div id='botoncat' class="botonidioma" onclick="alcat();">cat</div>					
+		</td>
+		
+		<td width='120px' align='center'>
+			<div class="botonidioma" style="float:right;" onclick="javascript:imprimir();"><text id="txt7"></text></div>
+		</td>
+	
+	<!--2) Zona Login---------------------------------------------------------------------->
 		
 		<td width="28%" class="color2">
 		
@@ -77,10 +65,9 @@ else {
 				
 				<div id='botoncuadrologout' class='botonlog' style="<?=$estilob4?>" onclick="javascript:chau();">
 					<text id ='txt13' class="textotitulin"></text>
-				</div>
-	
+				</div>	
 				
 			</div>
 		</td>
-			
-	</tr></table>
+	
+</tr></table>

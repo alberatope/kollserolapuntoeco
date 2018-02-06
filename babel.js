@@ -4,7 +4,7 @@
 //PREPARACIÓN:...............................................................................................................
 
 	//Numero total de textitos: ¡Cada vez que añadamos un textito habrá que cambiar la variable total!
-	var total = 51;
+	var total = 52;
 	
 	//Cada lengua un array:
 	txtcas = new Array(total); txtcat = new Array(total);
@@ -23,8 +23,8 @@
 		
 		//deja constancia del idioma elejido para que pueda ser enviado desde formularios y se mantenga tras la recarga.
 		//intenté hacerlo con getElementsByclass pero no me salió. Sería bueno re-intentarlo.
-		document.getElementById('marcadorLengua1').value = 'cas';
-		document.getElementById('marcadorLengua2').value = 'cas';
+		//document.getElementById('marcadorLengua1').value = 'cas';
+		//document.getElementById('marcadorLengua2').value = 'cas';
 	}
 
 	function alcat(){
@@ -38,8 +38,8 @@
 		}	
 		
 		//deja constancia del idioma elejido para que pueda ser enviado desde formularios y se mantenga tras la recarga
-		document.getElementById('marcadorLengua1').value = 'cat';
-		document.getElementById('marcadorLengua2').value = 'cat';
+		//document.getElementById('marcadorLengua1').value = 'cat';
+		//document.getElementById('marcadorLengua2').value = 'cat';
 	}
 	
 	
@@ -62,9 +62,10 @@
 	
 	//semanario
 
-		txtcas[6] = 'Calendarios semanales'; txtcat[6] = 'Calendaris setmanals';
+		txtcas[6] = 'Eventos y convocatorias'; txtcat[6] = 'Esdeveniments i convocatòries';
 		txtcas[7] = 'Imprimir<font size="-1"><br> en papel o pdf</font>'; txtcat[7] = 'Imprimir<font size="-1"><br> en paper o pdf</font>';
 		txtcas[9] = 'Otros colectivos, comunidades, y contactos de la Asamblea de Kollserola'; txtcat[9] = 'Altres col·lectius, comunitats i contactes de l´Assemblea de Kollserola';
+		txtcas[52] = 'Actividades de periocidad semanal'; txtcat[52] = 'Activitats de periodicitat setmanal';
 	
 	//fichakolectivo
 	

@@ -1,6 +1,6 @@
 //sustituibles por una funcion mas general que podríamos llamar pestañero
 function mostrar(cuadro){
-	var cuadros = ["cuadrosemana", "cuadroforo", "cuadroficha", "cuadronuevo", "cuadrolog", "cuadroflyers"];
+	var cuadros = ["cuadrosemana", "cuadroficha", "cuadronuevo", "cuadrolog"];
 	
 	for (i in cuadros){
 		

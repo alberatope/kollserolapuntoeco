@@ -26,9 +26,17 @@ A:hover {text-decoration:none;color:purple;}
 
 /*Cabeceras de los cuadros principales*/
 .cabeceragrande{
-	background-color:rgba(77,182,172,0.8);
-	color:black;
+	background-color:rgba(38,50,56,0.8);
+	color:#fffde7;
 	font:100% maquina;
+	
+	min-height:40px;
+}
+
+.cabecerapeque{
+		background-color:rgba(38,50,56,0.8);
+		color:#fffde7;
+		font:80% maquina;
 }
 
 .maquina70{
@@ -48,7 +56,7 @@ A:hover {text-decoration:none;color:purple;}
 }
 
 .maquina120{
-	color:black;
+	color:white;
 	font:120% maquina;
 }
 
@@ -62,7 +70,7 @@ A:hover {text-decoration:none;color:purple;}
 	margin:10px 40px 10px 40px;
 	padding:10px 40px 10px 40px;
 	font: 120% redonda;
-	color:rgba(29,44,170,0.9);
+	color:rgba(255,238,88,0.9);
 }
 
 /*la tabla que se comparte con otras webs*/
@@ -91,23 +99,17 @@ background-color: rgba(63,81,181,0.7);
 	}
 
 
-/*PAGINA DE FLYERS*/
-#cajadeflyers{
-	
-	max-width:100%;
-	margin-left:auto;
-	margin-right:auto;
-	display:flex;
-	flex-wrap: wrap;
-}
+
+/*FLYERS de EVENTOS*/
+
 
 .cajitaflyer{
 	width:280px;
 	float:right;
-	margin: 8px;
+	
 	border:2px solid grey;
 	border-collapse:collapse;
-	background-color:rgba(191,191,191,0.8);
+	/*background-color:rgba(191,191,191,0.8);*/
 	
 
 }
@@ -125,7 +127,7 @@ background-color: rgba(63,81,181,0.7);
 	
 	font:90% maquina;
 
-	margin:4px;
+	margin:2px;
 	padding-top:2px;
 	padding-bottom:2px;
 	padding-left:4px;
@@ -135,12 +137,19 @@ background-color: rgba(63,81,181,0.7);
 	font-size:x-small;
 }
 
+.cajadinamica{
+	
+	background-color:rgba(38,50,56,0.8);
+	
+	max-width:100%;
+	margin-left:auto;
+	margin-right:auto;
+	display:flex;
+	flex-wrap: wrap;
+}
+
 /*Los cuadros*/
 	#cuadroforo{
-		padding-top:40px;
-	}
-
-	#cuadrosemana{
 		padding-top:40px;
 	}
 
@@ -180,20 +189,11 @@ background-color: rgba(63,81,181,0.7);
 	.tablacabeza{
 	border-collapse:collapse;
 	margin-top:20px;
-	border:1px solid black;
-	border-bottom:none;
 	}
 	
-	.tablapie{
-	border-collapse:collapse;
-	border:1px solid black;
-	border-top:none;
-	}
-	
-	.tablaentera{
-	margin-top:20px;
-	border-collapse:collapse;
-	border:1px solid black;
+	.tablamedia{
+	margin-top:2px;
+	border-collapse:collapse;	
 	}
 	
 	
@@ -382,7 +382,7 @@ background-color: rgba(63,81,181,0.7);
 		}
 
 		.estilohoras{
-			width:110px;
+			
 			font:70% maquina;
 			color: black;
 			font-weight: 500;
@@ -393,7 +393,7 @@ background-color: rgba(63,81,181,0.7);
 		}
 
 		.estilocosas{
-			width:110px;
+			
 			font:80% Arial, Helvetica, sans-serif;
 			color: black;
 		}
