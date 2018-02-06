@@ -13,9 +13,9 @@
 
 <!--0) Cabecera de la ficha del colectivo--------------------------------------->
 
-	<table width="92%" border="0" class="tablaentera" align="center" cellpadding="" cellspacing="1">
+	<table width="1024px" border="0" class="tablamedia cabeceragrande" align="center" cellpadding="" cellspacing="1">
 	  <tr>
-		<td class="cabeceragrande"><h3><?=$kolectivo;?></h3>
+		<td><h3><?=$kolectivo;?></h3>
 			<a href="javascript:cuatrirruptor('f4','f1','f2','f3');">[ <text id="txt42"></text> ] </a>
 			<a href="javascript:cuatrirruptor('f1','f2','f3','f4');">[ <text id="txt10"></text> ] </a>
 			<a href="javascript:cuatrirruptor('f2','f1','f3','f4');">[ <text id="txt11"></text> ] </a>
@@ -26,8 +26,8 @@
 
 <!--A) Publicar flyer ------------------------------------------------------------------------------------------------------>
 	
-	<form id="f4" action="/flyers/avolar.php" enctype="multipart/form-data" method="post">
-		<table width="60%" border="0" class="tablaentera color2" align="center" cellpadding="2" cellspacing="1">
+	<form id="f4" action="/ficha/avolar.php" enctype="multipart/form-data" method="post">
+		<table width="600px" class="tablacabeza color2" style='border:2px solid darkgrey' align="center" cellpadding="2" cellspacing="1">
 			<tr>
 				<td width="60%"><!--Editor de Fecha -->
 					<div class='cajapublicarfecha'>

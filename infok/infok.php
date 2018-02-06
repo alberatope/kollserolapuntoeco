@@ -1,4 +1,4 @@
-<!--semanario.php : Archivo troncal del info-kollserola
+<!--infok.php : Archivo troncal del info-kollserola
 
 	0) impresión: cabecera del docu kollserola.eco cuando es imprimido. 
 	1) eventos: Lista cronológica de eventos futuros.

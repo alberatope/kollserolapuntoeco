@@ -34,7 +34,7 @@ if (isset($_GET['d'])) $focus = $_GET['d']; else $focus = 'semana';
 
 	<div id="cuadronuevo" style="display:none"><?include('nuevokolectivo.html');?></div>
 
-	<div id="cuadrosemana" style="display:none"><?chdir($dir.'/semanario'); include('semanario.php');?></div>
+	<div id="cuadrosemana" style="display:none"><?chdir($dir.'/infok'); include('infok.php');?></div>
 
 	<div id="cuadroficha" style="display:none"><?chdir($dir.'/ficha');if (isset($_SESSION['idkol']) and isset($_SESSION['kol'])) include ('fichakolectivo.php');?></div>
 
