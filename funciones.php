@@ -47,6 +47,5 @@
 		
 		  return array ($dia,$mesnumerico,$ano,$nombremes,$nombredia);
 		
-	}
-	
+	}	
 ?>

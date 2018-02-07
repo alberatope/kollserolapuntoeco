@@ -54,19 +54,20 @@
 			
 		//DATOS A SUBIR A LA MYSQL
 			
+			require '../configuracion.php';
+			
 			$fechainicio = $_POST['fechainicio'];	
 			$fechacaducidad = $_POST['fechacaducidad'];	
-			$titulodelflyer = $_POST['titulodelflyer'];	
-			$infodelflyer = $_POST['infodelflyer'];
+			$titulodelflyer = securite_bdd($_POST['titulodelflyer']);	
+			$infodelflyer = securite_bdd($_POST['infodelflyer']);
 			$undosvariosdias = $_POST['undosvariosdias'];
 			
 			//el kolectivo que está loggeado será el publicador:
-			session_start();
-			$publicador = $_SESSION['kol'];
+			session_start(); $publicador = securite_bdd($_SESSION['kol']);
 			
 			//SUBIMOS LOS DATOS DEL FLYER A LA MYSQL:
 
-			require '../configuracion.php';
+			
 			$orden="INSERT INTO flyers (publicador, fechaInicio, fechaCaducidad, unDosVariosDias, titulo, masInfo, archivoFlyer) VALUES ('$publicador', '$fechainicio', '$fechacaducidad','$undosvariosdias','$titulodelflyer',	'$infodelflyer','$nombrito')";
 			
 				/*orden a la base de datos*/
@@ -76,6 +77,6 @@
 	
 /*Salimos airosos*/
 print "<h3>Evento publicado con éxito!</h3>";
-Header("Refresh:1;url=../index.php?d=ficha");
+Header("Refresh:1;url=../index.php?d=semana");
 	
 ?>

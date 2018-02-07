@@ -47,8 +47,8 @@
 								<text id='txt45' class='maquina100' style='margin:6px;float:left;display:none'></text>
 								<input id ='inputcad' type='date' name='fechacaducidad' style='margin:6px;float:left;width:7em' placeholder='aaaa-mm-dd'>
 
-								<!--variable que registra si es un dia, dos o varios---!!!!!!!!EN PRUEBAS!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!-->
-								<input id = 'cuantosdias' type = 'hidden' name='undosvariosdias' value=''>
+								<!--variable que registra si es un dia, dos o varios. Por defecto es uno.-->
+								<input id = 'cuantosdias' type = 'hidden' name='undosvariosdias' value='1'>
 								
 							</td></tr>
 						</table>
@@ -64,8 +64,8 @@
 			</tr>
 			<tr>	
 				<td><!--Input para descripción-->
-					<input name="titulodelflyer" style="padding:6px;border:1px solid black" rows="8" class="inputtransparente" placeholder='Título del evento'></textarea>
-					<textarea name="infodelflyer" style="padding:6px;border:1px solid black" rows="8" class="inputtransparente" placeholder='Descripción / info adicional al flyer'></textarea>
+					<input name="titulodelflyer" style="padding:6px;border:1px solid black" rows="8" class="inputtransparente" maxlength='80' placeholder='Título del evento'></textarea>
+					<textarea name="infodelflyer" style="padding:6px;border:1px solid black" rows="8" class="inputtransparente" maxlength='300' placeholder='Descripción / info adicional al flyer'></textarea>
 				</td>
 				<td><!--Boton Publicar (quizá poner uno con Cancelar que limpie los inputs?)-->
 					<input type="submit" id="botonPublicarFly" value="Publicar flyer" class="botonseleccion" style="width:10em">
@@ -111,7 +111,7 @@
 		
 		<table width="92%" border="0" class="tablapie" align="center" cellpadding="2" cellspacing="1">
 			<tr class="colorfondoformu"><td colspan="2" class="cabeceragrande">
-					<textarea name="comunicado" style="width:100%;" rows="8" class="inputtransparente"><?=$comunicado?></textarea>
+					<textarea name="comunicado" style="width:100%;" rows="6" maxlength='600' class="inputtransparente"><?=$comunicado?></textarea>
 			</td></tr>
 		</table>
 

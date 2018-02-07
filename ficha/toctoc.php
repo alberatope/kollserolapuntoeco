@@ -9,20 +9,21 @@
 //2) Buscamos los datos del colectivo en la SQL:
 
 	require('../configuracion.php');
-	$sql = "SELECT id, kolectivo, pazz FROM semanario WHERE kolectivo = '".$kolectivo."';";
+	$sql = "SELECT id, kolectivo, pazz FROM semanario WHERE kolectivo = '$kolectivo'";
 	$kk = mysql_query($sql, $con);
 	$row = mysql_fetch_assoc($kk);
 	
 
 //3a) Si el pass resultó correcto, definimos la session y vamos a la ficha del colectivo:
 
-		if ($pazz == $row[pazz]) {	
+		if ($pazz == $row['pazz']) {	
 			
 				session_start();
 				$_SESSION['kol'] = $kolectivo;
 				$_SESSION['idkol']=$row['id'];
 
-				Header("Location: /index.php?d=ficha");
+				//Entramos sesionizados a la ficha del kolectivo
+					Header("Location: /index.php?d=ficha");				
 		}
 		
 //3b) Caso contrario devolvemos pass error y retornamos al formulario de log:

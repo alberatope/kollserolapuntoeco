@@ -9,25 +9,27 @@
 		</td></tr>
 	
 			<tr class="colorfondoformu"> 
-				<td><input type="text" id ="inputkolectivo" name="kolectivo" class="inputtransparente" placeholder="Nombre del Kolectivo (campo necesario)"></td>
-				<td width="30%"><input type="text" name="web" class="inputtransparente" placeholder="web"><input type="text" name="email" class="inputtransparente" placeholder="email"></td>
-				<td width="30%"><input type="text" name="direccion" class="inputtransparente" placeholder="dirección"></td>
+				<td><input type="text" id ="inputkolectivo" name="kolectivo" class="inputtransparente" maxlength="36" placeholder="Nombre del Kolectivo (campo necesario)"></td>
+				<td width="30%"><input type="text" name="web" class="inputtransparente" maxlength="80" placeholder="web">
+					<input type="text" name="email" class="inputtransparente" maxlength="60" placeholder="email"></td>
+				<td width="30%"><input type="text" name="direccion" class="inputtransparente" maxlength="60" placeholder="dirección"></td>
 			</tr>
 			
 			<tr class="colorfondoformu">
-				<td><textarea name="mensaje" style="width:100%;" rows="4" class="inputtransparente" placeholder="Descripción mini"></textarea></td>
+				<td><textarea name="mensaje" style="width:100%;" rows="2" class="inputtransparente" maxlength="80" placeholder="Descripción mini"></textarea></td>
 				<td  colspan="2">
-					<table width="100%"><tr>
-						<td>
-							<input id="inputpazz" type="password" name="pazz" class="inputpazz" placeholder="pass (campo necesario)"><br>
-							<text id='txt15' class="detallepazz"></text>
-						</td>
-						<td align="right"><div class="botonseleccion" onclick="javascript:subirseguro();">Añadir</div></td>
-					</tr></table>
-		
+
+					<input id="inputpazz" type="password" name="pazz" class="inputpazz" maxlength='50' placeholder="pass (campo necesario)"><br>
+					<text id='txt15' class="detallepazz"></text>
+
 				</td>
 			</tr>
-		
+			
+			<tr class="colorfondoformu">
+				<td colspan='2'><textarea name="comunicado" style="width:100%;" rows="6" maxlength='600' class="inputtransparente" placeholder="Descripción detallada, manifiesto, detalles a saber..."><?=$comunicado?></textarea></td>
+				<td align="right"><div class="botonseleccion" style='float:right' onclick="javascript:subirseguro();">Añadir</div></td>
+			</tr>
+
 	</table>
 
 </form>

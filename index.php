@@ -27,7 +27,7 @@ if (isset($_GET['d'])) $focus = $_GET['d']; else $focus = 'semana';
 	<!--1) CABECERA-->
 	<?include 'cabeceraweb.html';?>
 
-	<!--2) CONTENIDOS-->	
+	<!--2) CONTENIDOS-->
 	<?$dir=getcwd();//almacenamos el directorio raiz de la web: nos hace falta para gestionar los cambios de directorio?>
 	
 	<div id="cuadrolog" style="display:none"><?include('logkolectivo.html');?></div>

@@ -28,7 +28,7 @@
 		<?
 		//pedimos a la mysql los eventos ---------------------------------------------------------------------------
 		
-			$sql = "SELECT id, publicador, fechaPublicacion, fechaInicio, fechaCaducidad, titulo, masInfo, horizontalVertical, unDosVariosDias, archivoFlyer FROM flyers WHERE fechaCaducidad >= curdate() ORDER BY FechaCaducidad ASC";
+			$sql = "SELECT id, publicador, fechaPublicacion, fechaInicio, fechaCaducidad, titulo, masInfo, unDosVariosDias, archivoFlyer FROM flyers WHERE fechaCaducidad >= curdate() ORDER BY FechaCaducidad ASC";
 			$rs = mysql_query($sql, $con);
 			
 		//pintamos las fichas de los eventos---------------------------------------------------------------------

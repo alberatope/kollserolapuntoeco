@@ -6,10 +6,10 @@
 	<!--Para borrar el anterior flyer necesitaremos su nombre:-->
 	<input type='hidden' name='flyer<?=$s?>' value='<?=${'flyer'.$s}?>'>
 		
-	<!--fila con el día de la semana--------------------------------------------------------------->
-	
 	
 	<div class="cajaeditarundia">
+		
+		<!--Titulo y botones de la cajita-->
 		
 		<table width="100%" border="0"  align="center" valign="center" cellpadding="2" cellspacing="1"><tr>
 			<td colspan="2" align="center">
@@ -23,21 +23,23 @@
 
 		<hr class="barritaentrecosas" style="opacity:1;">
 
+		<!--la cajita-->
+		
 		<table width="100%" border="0" style="border-collapse:collapse;"><tr>
 			<td>
 				<table width="100%" style="display:flex;justify-content:space-around;flex-flow: row wrap;">
 					<tr>
 						<!--Display primer horario/actividad------------------------------------------------------------------>
 						<td>
-							<div align='left'><input name='h<?=$s?>' value='<?=${'h'.$s}?>' maxlength="40" class="inputhora" placeholder="horario"></div>
-							<textarea name="<?=$s?>" value="<?=$$s?>" maxlength="102" style="width:100%;" rows="4" class="inputcosa" placeholder="actividad"><?=$$s?></textarea>
+							<div align='left'><input name='h<?=$s?>' value='<?=${'h'.$s}?>' maxlength="50" class="inputhora" placeholder="horario"></div>
+							<textarea name="<?=$s?>" value="<?=$$s?>" maxlength="120" style="width:100%;" rows="4" class="inputcosa" placeholder="actividad"><?=$$s?></textarea>
 						</td>
 			
 						<!--Display segundo horario/actividad---------------------------------------------------------->
 						<td>
 							<div height="66px" id="segundacosa<?=$s?>" style="<?if (empty(${$s.'2'})==true) print "display:none"; else print "display:block";?>">
-								<div  align='left' class='estiloedihoras'><input name="h<?=$s?>2" value="<?=${'h'.$s.'2'}?>" maxlength="40" class="inputhora" placeholder="horario"></div>
-								<div class='estiloedicosas'><textarea name="<?=$s?>2" value="<?=${$s.'2'}?>" maxlength="102" style="width:100%;" rows="4" class="inputcosa" placeholder="actividad"><?=${$s.'2'}?></textarea></div>
+								<div  align='left' class='estiloedihoras'><input name="h<?=$s?>2" value="<?=${'h'.$s.'2'}?>" maxlength="50" class="inputhora" placeholder="horario"></div>
+								<div class='estiloedicosas'><textarea name="<?=$s?>2" value="<?=${$s.'2'}?>" maxlength="120" style="width:100%;" rows="4" class="inputcosa" placeholder="actividad"><?=${$s.'2'}?></textarea></div>
 							</div>
 						</td>
 										

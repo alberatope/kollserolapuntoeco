@@ -1,14 +1,10 @@
 <?
-print 'estamos en creardirs.php';
-
 	//Obtenemos la id que le ha sido otorgada al nuevo kolectivo
 	$sql = "SELECT id, kolectivo FROM semanario WHERE kolectivo = '".$_POST['kolectivo']."';";
 	$rs = mysql_query($sql, $con);$row = mysql_fetch_assoc($rs);
 	extract($row);
 	
-	$id = $row['id'];
-	
-	
+	$id = $row['id'];	
 
 //Creamos su directorio ftp
 
@@ -29,4 +25,5 @@ print 'estamos en creardirs.php';
 			
 				ftp_close($cid);	
 
+return;		
 ?>
