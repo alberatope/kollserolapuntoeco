@@ -1,13 +1,12 @@
 <?
 	//CARGAMOS LAS VARIABLES CON LOS DATOS DEL KOLECTIVO
-
+	
 	$kolectivo = $_SESSION['kol'];
 	$sql = "SELECT id, kolectivo, web, email, direccion, mensaje, comunicado, pazz, L, hL, L2, hL2, flyerL, M, hM, M2, hM2, flyerM, X, hX, X2, hX2, flyerX, J, hJ, J2, hJ2, flyerJ, V, hV, V2, hV2, flyerV, S, hS, S2, hS2, flyerS, D, hD, D2, hD2, flyerD FROM semanario WHERE kolectivo = '".$kolectivo."';";
 	$rs = mysql_query($sql, $con);$row = mysql_fetch_assoc($rs);
 
 	//extraemos las variables para que estén el el ámbito
-	extract($row);
-	
+	extract($row);	
 ?>
 
 
@@ -144,7 +143,7 @@
 					<table width="100%">
 						<tr><td>
 							<text class="detallepazz">cambiar password</text><br>
-							<input id="inputpazz" type="text" name="pazz" class="inputpazz" style="width:100%;" placeholder="pass antiguo(campo necesario)" maxlength="30"><br>
+							<input id="inputpazz" type="text" name="oldpazz" class="inputpazz" style="width:100%;" placeholder="pass antiguo(campo necesario)" maxlength="30"><br>
 							<input id="inputnewpazz" type="text" name="newpazz" class="inputpazz" style="width:100%;" placeholder="pass nuevo(campo necesario)" maxlength="30">					
 						</td></tr>
 					</table>
