@@ -4,28 +4,22 @@ pues cada flyer repite el bucle y sus textos tienen la misma id que los de los o
 <?
 	//leemos la fechaCaducidad en variables humanoides
 	list ($dia2,$mesnumerico2,$ano2,$nombremes2,$nombredia2) = leerlafecha($fechaCaducidad,'cas');
-
+	
 	//leemos la fechaInicio solamente si está definida
 	if ($unDosVariosDias != '1') list ($dia1,$mesnumerico1,$ano1,$nombremes1,$nombredia1) = leerlafecha($fechaInicio,'cas');
+
+	//Definimos los artículos que pueden hacer falta
+	if ($unDosVariosDias == '3') $del = "<text class='maquina70'>del</text>"; else $minidel ='';	
+	if ($unDosVariosDias == '2') $aloy = "<text class='maquina70'>y</text>"; 
+	else if ($unDosVariosDias == '3') $aloy = "<text class='maquina70'>al</text>";
+	else $aloy ='';	
 ?>
 
-<div style='display:inline-flex;flex-wrap:wrap;align-items:center'>		
+<div class='fechitaflyer' style='display:inline-flex;flex-wrap:wrap;min-height:2em'>		
 
-	<div style='display:flex;align-items:center'><!--FECHA INICIO:-->
-
-		<?
-		if ($unDosVariosDias == '3') print "<text class='maquina70'>del</text>";
-		if ($unDosVariosDias != '1') print "<div class='fechitaflyer'><b>$dia1 $nombremes1 </b><br><text>$nombredia1</text></div>";?>
-	
-	</div>
-	
-	<div style='display:flex;align-items:center'><!--FECHA FIN:-->
-		
-		<?
-		if ($unDosVariosDias == '2') print "<text class='maquina70'>y</text>";
-		if ($unDosVariosDias == '3') print "<text class='maquina70'>al</text>";							
-		print "<div class='fechitaflyer'><b>$dia2 $nombremes2 </b><br><text>$nombredia2</text></div>";?>
-
-	</div>
+	<?		
+		if ($unDosVariosDias != '1') print "<div style='display:block'> $del <b>$dia1 $nombremes1 </b><br><text> $nombredia1</text></div>";
+		print "<div style='display:block'> $aloy <b>$dia2 $nombremes2 </b><br><text> $nombredia2</text></div>";
+	?>
 
 </div>

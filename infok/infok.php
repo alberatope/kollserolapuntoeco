@@ -100,7 +100,7 @@
 	
 	<!--caja de colectivos--->
 
-	<table width="1024px" border="0" class='cabeceragrande' align="center" cellpadding="" cellspacing="1">
+	<table width="1024px" border="0" align="center" cellpadding="" cellspacing="1">
 	<tr><td class='cajadinamica'>
 	
 		<?

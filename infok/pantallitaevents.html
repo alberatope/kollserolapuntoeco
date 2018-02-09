@@ -22,6 +22,8 @@
 	<!--Pie de la pantallita-->
 
 	<hr class='barritaentrecosas'>
-	<div class="botonseleccion" style="float:right;border:0;" onclick="javascript:pantallita('e<?=$id?>');">Visto</div>
+	<div class="botonseleccion" style="float:right;border:0;" onclick="javascript:pantallita('e<?=$id?>');document.getElementById('fade').style.display='none';">Visto</div>
 
 </div>
+
+<div id="fade" class="fadebox">&nbsp;</div>
