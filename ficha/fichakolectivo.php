@@ -63,8 +63,8 @@
 			</tr>
 			<tr>	
 				<td><!--Input para descripción-->
-					<input name="titulodelflyer" style="padding:6px;border:1px solid black" rows="8" class="inputtransparente" maxlength='80' placeholder='Título del evento'></textarea>
-					<textarea name="infodelflyer" style="padding:6px;border:1px solid black" rows="8" class="inputtransparente" maxlength='300' placeholder='Descripción / info adicional al flyer'></textarea>
+					<input name="titulodelflyer" style="padding:6px;border:1px solid black" rows="8" class="inputtransparente" maxlength='100' placeholder='Título del evento'></textarea>
+					<textarea name="infodelflyer" style="padding:6px;border:1px solid black" rows="8" class="inputtransparente" maxlength='600' placeholder='Descripción / info adicional al flyer'></textarea>
 				</td>
 				<td><!--Boton Publicar (quizá poner uno con Cancelar que limpie los inputs?)-->
 					<input type="submit" id="botonPublicarFly" value="Publicar flyer" class="botonseleccion" style="width:10em">

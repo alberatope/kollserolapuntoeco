@@ -9,32 +9,12 @@ if ($unDosVariosDias != '1') list ($dia1,$mesnumerico1,$ano1,$nombremes1,$nombre
 require('../constantes.php');?>
 
 
-<div class='cajitaflyer' style="background-color:<?=$colortronco?>;opacity:0.8" onmouseover="this.style.opacity = 1;" onmouseout="this.style.opacity =0.8;">
+<div class='cajitaflyer' style="background-color:<?=$colortronco?>;opacity:0.8" onclick="javascript:pantallita('evento<?=$id?>');" onmouseover="this.style.opacity = 1;" onmouseout="this.style.opacity =0.8;">
 
 	<table width='100%'><tr>
 		
-		<!--Fechas--------PARA TRADUCIR ESTO ES PRECISO QUE CAMBIEMOS EL SISTEMA DE TRADUCCIÓN A CLASS EN LUGAR DE ID (issue 1 del github)
-		pues cada flyer repite el bucle y sus textos tienen la misma id que los de los otros flyers ------------------------> 
-	
-			<td style='display:inline-flex;flex-wrap:wrap;align-items:center'>		
-
-				<div style='display:flex;align-items:center'><!--FECHA INICIO:-->
-	
-					<?
-					if ($unDosVariosDias == '3') print "<text class='maquina70'>del</text>";
-					if ($unDosVariosDias != '1') print "<div class='fechitaflyer'><b>$dia1 $nombremes1 </b><br><text>$nombredia1</text></div>";?>
-				
-				</div>
-				
-				<div style='display:flex;align-items:center'><!--FECHA FIN:-->
-					
-					<?
-					if ($unDosVariosDias == '2') print "<text class='maquina70'>y</text>";
-					if ($unDosVariosDias == '3') print "<text class='maquina70'>al</text>";							
-					print "<div class='fechitaflyer'><b>$dia2 $nombremes2 </b><br><text>$nombredia2</text></div>";?>
-
-				</div>
-			
+			<td>
+				<?include 'fechitas.html';?>
 			</td>
 		
 		<!--Flyer (imagen)-->

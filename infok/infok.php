@@ -128,20 +128,35 @@
 
 <!--4) PANTALLITAS EMERGENTES DE KOLECTIVOS Y DE CASILLAS------------------------------------------------------------------------>
 
-		<?				
-			$sql = "SELECT id, kolectivo, web, email, direccion, mensaje, comunicado, L, hL, L2, hL2, flyerL, M, hM, M2, hM2, flyerM, X, hX, X2, hX2, flyerX, J, hJ, J2, hJ2, flyerJ, V, hV, V2, hV2, flyerV, S, hS, S2, hS2, flyerS, D, hD, D2, hD2, flyerD FROM semanario";
-			$rs = mysql_query($sql, $con);
+	<?				
+		$sql = "SELECT id, kolectivo, web, email, direccion, mensaje, comunicado, L, hL, L2, hL2, flyerL, M, hM, M2, hM2, flyerM, X, hX, X2, hX2, flyerX, J, hJ, J2, hJ2, flyerJ, V, hV, V2, hV2, flyerV, S, hS, S2, hS2, flyerS, D, hD, D2, hD2, flyerD FROM semanario";
+		$rs = mysql_query($sql, $con);
+		
+		while($row = mysql_fetch_assoc($rs)){
 			
-			while($row = mysql_fetch_assoc($rs)){
-				
-				extract ($row);
-				$template = implode("", file("pantallitak.html"));
-				eval("?>".$template."<?");//ficha del colectivo
-				
-					foreach ($semana as $s) {
-									
-					$template = implode("", file("pantallita.html"));
-					eval("?>".$template."<?");//fichas de cada día de la semana de cada colectivo
-					}
-			}
-		?>	
+			extract ($row);
+			$template = implode("", file("pantallitak.html"));
+			eval("?>".$template."<?");//ficha del colectivo
+			
+				foreach ($semana as $s) {
+								
+				$template = implode("", file("pantallita.html"));
+				eval("?>".$template."<?");//fichas de cada día de la semana de cada colectivo
+				}
+		}
+	?>	
+
+<!--5) PANTALLITAS EMERGENTES DE EVENTOS-->
+
+	<?
+		$sql = "SELECT id, publicador, fechaPublicacion, fechaInicio, fechaCaducidad, titulo, masInfo, unDosVariosDias, archivoFlyer FROM flyers WHERE fechaCaducidad >= curdate() ORDER BY FechaCaducidad ASC";
+		$rs = mysql_query($sql, $con);
+		
+		while($row = mysql_fetch_assoc($rs)){
+		
+			$template = implode("", file("pantallitaevents.html"));
+			pintar($template,$row);
+		}
+	?>
+
+	

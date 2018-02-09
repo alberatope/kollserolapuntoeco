@@ -1,0 +1,27 @@
+<div id="pantallitaevento<?=$id?>" class="pantallita" style="display:none;">
+
+	<!--Cabecera de la pantallita: Fechas y título-->
+
+	<table cellpadding='6px'><tr>
+		<td><div style='display:block'><?include 'fechitas.html';?></div></td>
+		<td><text class="maquina90" style='display:block'><font size="+1"><?=$titulo?></font><br><?=$mensaje?></text></td>
+	</tr></table>
+	
+	<!--Descripción del evento-->
+	
+	<hr class='barritaentrecosas'>
+	<text style='font-size:small;padding:8px;text-align:justify;display:block;margin-bottom:12px'><?=$masInfo?></text>
+	<hr class='barritaentrecosas'>
+	
+	<!--Flyer del evento-->
+	
+	<div width='100%' align='center'>
+		<a href="../nubedeflyers/<?=$archivoFlyer?>"><img width='400px' style='margin:4px;max-height:650px' border='1' src="../nubedeflyers/<?=$archivoFlyer?>"></a>
+	</div>
+	
+	<!--Pie de la pantallita-->
+
+	<hr class='barritaentrecosas'>
+	<div class="botonseleccion" style="float:right;border:0;" onclick="javascript:pantallita('e<?=$id?>');">Visto</div>
+
+</div>
