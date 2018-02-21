@@ -11,24 +11,16 @@ require('../constantes.php');?>
 
 <div class='cajitaflyer' style="background-color:<?=$colortronco?>;opacity:0.8" onclick="javascript:pantallita('evento<?=$id?>');document.getElementById('fade').style.display='block';" onmouseover="this.style.opacity = 1;" onmouseout="this.style.opacity =0.8;">
 
-	<table width='100%'><tr>
+	<table width='100%'>
+		<tr>
 		
-			<td valign='top'>
-				<?include 'fechitas.html';?>
-			</td>
+			<td valign='top'><?include 'fechitas.html';?></td>
 		
-		<!--Flyer (imagen)-->
+			<?if ($archivoFlyer != '') print "<td width='94px' rowspan='2'><img width='92px' style='margin:1px;max-height:180px' border='1' src='../nubedeflyers/$archivoFlyer'></td>";?>
 
-			<td width='94px' rowspan='2'>
-				<img width='92px' style='margin:1px;max-height:180px' border='1' src="../nubedeflyers/<?=$archivoFlyer?>">
-			</td></tr>
-
-			
-		<!--Título-->
-			
-			<tr><td><text style='font-size:small'><?=$titulo;?></text></td></tr>
-			
-			
+		</tr>
+		
+		<tr><td><text style='font-size:small'><?=$titulo;?></text></td></tr>
 
 	</table>
 

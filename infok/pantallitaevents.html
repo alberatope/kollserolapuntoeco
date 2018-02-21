@@ -3,7 +3,7 @@
 	<!--Cabecera de la pantallita: Fechas y título-->
 
 	<table cellpadding='6px'><tr>
-		<td><div style='display:block'><?include 'fechitas.html';?></div></td>
+		<td style='min-width:130px'><div style='display:block'><?include 'fechitas.html';?></div></td>
 		<td><text class="maquina90" style='display:block'><font size="+1"><?=$titulo?></font><br><?=$mensaje?></text></td>
 	</tr></table>
 	
@@ -16,7 +16,7 @@
 	<!--Flyer del evento-->
 	
 	<div width='100%' align='center'>
-		<a href="../nubedeflyers/<?=$archivoFlyer?>"><img width='400px' style='margin:4px;max-height:650px' border='1' src="../nubedeflyers/<?=$archivoFlyer?>"></a>
+		<?if ($archivoFlyer != '') print "<a href='../nubedeflyers/$archivoFlyer'><img width='400px' style='margin:4px;max-height:650px' border='1' src='../nubedeflyers/$archivoFlyer'></a>";?>
 	</div>
 	
 	<!--Pie de la pantallita-->

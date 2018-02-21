@@ -12,21 +12,27 @@
 
 <!--0) Cabecera de la ficha del colectivo--------------------------------------->
 
-	<table width="1024px" border="0" class="tablamedia cabeceragrande" align="center" cellpadding="" cellspacing="1">
-	  <tr>
-		<td><h3><?=$kolectivo;?></h3>
-			<a href="javascript:cuatrirruptor('f4','f1','f2','f3');">[ <text id="txt42"></text> ] </a>
-			<a href="javascript:cuatrirruptor('f1','f2','f3','f4');">[ <text id="txt10"></text> ] </a>
-			<a href="javascript:cuatrirruptor('f2','f1','f3','f4');">[ <text id="txt11"></text> ] </a>
-			<a href="javascript:cuatrirruptor('f3','f1','f2','f4');">[ <text id="txt12"></text> ] </a>
-		</td>
-	  </tr>
+	<table width="1024px" border="2" class="tablamedia cabeceragrande" style="margin-bottom:-8px"align="center" cellpadding="" cellspacing="1">
+		<tr>
+			<td id='pes1' align="center" valign="middle">
+				<a href="javascript:cuatrirruptor('f4','f1','f2','f3')"><text id="txt42"></text></td>
+			<td id='pes2' align="center" valign="middle">
+				<a href="javascript:cuatrirruptor('f1','f2','f3','f4')"><text id="txt10"></text></td>
+			<td id='pes3' align="center" valign="middle">
+				<a href="javascript:cuatrirruptor('f2','f1','f3','f4')"><text id="txt11"></text></td>
+			<td id='pes4' align="center" valign="middle">
+				<a href="javascript:cuatrirruptor('f3','f1','f2','f4')"><text id="txt12"></text></td>
+			
+		</tr>
 	</table>
+
+	<hr class="barritaentrecosas">
+
 
 <!--A) Publicar flyer ------------------------------------------------------------------------------------------------------>
 	
 	<form id="f4" action="/ficha/avolar.php" enctype="multipart/form-data" method="post">
-		<table width="600px" class="tablacabeza color2" style='border:2px solid darkgrey' align="center" cellpadding="2" cellspacing="1">
+		<table width="600px" class="tablacabeza color1" style='border:2px solid darkgrey' align="center" cellpadding="2" cellspacing="1">
 			<tr>
 				<td width="60%"><!--Editor de Fecha -->
 					<div class='cajapublicarfecha'>
@@ -57,14 +63,14 @@
 				<td width="40%"><!--Input para subir flyer-->
 								<input type="hidden" name="MAX_FILE_SIZE" value="1000000000">				
 								<input type="file" id="botonFlyReal" name="archivofly" accept="image/png, .jpeg, .jpg, image/gif" onchange="document.getElementById('botonFlyConClase').value=this.files[0].name;document.getElementById('botonCambiarFly').style.display ='block';" style="display:none;">
-								<input type="button" id="botonFlyConClase" value="Añadir flyer" class="inputtransparente" style='border:1px solid black;min-height:20px;width:80%' onclick="document.getElementById('botonFlyReal').click();">
-								<input type="button" id="botonCambiarFly" value="Cambiar flyer" class="inputtransparente" style='display:none' onclick="document.getElementById('botonFlyReal').click();">
+								<input type="button" id="botonFlyConClase" value="Añadir flyer" class="inputtransparente color1" style='border:1px solid black;min-height:20px;width:80%' onclick="document.getElementById('botonFlyReal').click();">
+								<input type="button" id="botonCambiarFly" value="Cambiar flyer" class="inputtransparente color1" style='display:none' onclick="document.getElementById('botonFlyReal').click();">
 				</td>			
 			</tr>
 			<tr>	
 				<td><!--Input para descripción-->
-					<input name="titulodelflyer" style="padding:6px;border:1px solid black" rows="8" class="inputtransparente" maxlength='100' placeholder='Título del evento'></textarea>
-					<textarea name="infodelflyer" style="padding:6px;border:1px solid black" rows="8" class="inputtransparente" maxlength='600' placeholder='Descripción / info adicional al flyer'></textarea>
+					<input name="titulodelflyer" style="padding:6px;border:1px solid black" rows="8" class="inputtransparente color1" maxlength='140' placeholder='Título del evento'></textarea>
+					<textarea name="infodelflyer" style="padding:6px;border:1px solid black" rows="8" class="inputtransparente color1" maxlength='2400' placeholder='Descripción / info adicional al flyer'></textarea>
 				</td>
 				<td><!--Boton Publicar (quizá poner uno con Cancelar que limpie los inputs?)-->
 					<input type="submit" id="botonPublicarFly" value="Publicar flyer" class="botonseleccion" style="width:10em">
@@ -110,7 +116,7 @@
 		
 		<table width="92%" border="0" class="tablapie" align="center" cellpadding="2" cellspacing="1">
 			<tr class="colorfondoformu"><td colspan="2" class="cabeceragrande">
-					<textarea name="comunicado" style="width:100%;" rows="6" maxlength='600' class="inputtransparente"><?=$comunicado?></textarea>
+					<textarea name="comunicado" style="width:100%;" rows="6" maxlength='600' class="inputtransparente color1"><?=$comunicado?></textarea>
 			</td></tr>
 		</table>
 
@@ -130,12 +136,12 @@
 		<table width="92%" border="0" class="tablapie" align="center" cellpadding="2" cellspacing="1">
 			
 			<tr class="colorfondoformu"> 
-				<td><text class="detallepazz">Nombre del colectivo:</text><input type="text" id ="inputkolectivo" name="kolectivo" class="inputtransparente" value="<?=$kolectivo?>" maxlength="40"></td>
+				<td><text class="detallepazz">Nombre del colectivo:</text><input type="text" id ="inputkolectivo" name="kolectivo" class="inputtransparente color1" value="<?=$kolectivo?>" maxlength="40"></td>
 				<td rowspan="2" width="30%">
 					<table width="100%">
-						<tr><td><text class="detallepazz">web:</text><input type="text" name="web" class="inputtransparente" value="<?=$web?>"></td></tr>
-						<tr><td><text class="detallepazz">email:</text><input type="text" name="email" class="inputtransparente" value="<?=$email?>" maxlength="80"></td></tr>
-						<tr><td><text class="detallepazz">direcci&oacute;n:</text><input type="text" name="direccion" class="inputtransparente" value="<?=$direccion?>" maxlength="80"></td></tr>
+						<tr><td><text class="detallepazz">web:</text><input type="text" name="web" class="inputtransparente color1" value="<?=$web?>"></td></tr>
+						<tr><td><text class="detallepazz">email:</text><input type="text" name="email" class="inputtransparente color1" value="<?=$email?>" maxlength="80"></td></tr>
+						<tr><td><text class="detallepazz">direcci&oacute;n:</text><input type="text" name="direccion" class="inputtransparente color1" value="<?=$direccion?>" maxlength="80"></td></tr>
 					</table>
 				</td>
 				
@@ -151,7 +157,7 @@
 			</tr>
 			
 			<tr class="colorfondoformu">
-				<td><text class="detallepazz">Mini descripción:</text><textarea name="mensaje" style="width:100%;" rows="2" class="inputtransparente" maxlength="80"><?=$mensaje?></textarea></td>
+				<td><text class="detallepazz">Mini descripción:</text><textarea name="mensaje" style="width:100%;" rows="2" class="inputtransparente color1" maxlength="80"><?=$mensaje?></textarea></td>
 				<td><a href="javascript:kaputseguro();" class="detallepazz">eliminar cuenta del kolectivo</a></td>
 			</tr>
 				

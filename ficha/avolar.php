@@ -51,29 +51,30 @@
 				
 					ftp_close($cid);	
 					
-			
-		//DATOS A SUBIR A LA MYSQL
-			
-			require '../configuracion.php';
-			
-			$fechainicio = $_POST['fechainicio'];	
-			$fechacaducidad = $_POST['fechacaducidad'];	
-			$titulodelflyer = securite_bdd($_POST['titulodelflyer']);	
-			$infodelflyer = securite_bdd($_POST['infodelflyer']);
-			$undosvariosdias = $_POST['undosvariosdias'];
-			
-			//el kolectivo que está loggeado será el publicador:
-			session_start(); $publicador = securite_bdd($_SESSION['kol']);
-			
-			//SUBIMOS LOS DATOS DEL FLYER A LA MYSQL:
+	}	
 
-			
-			$orden="INSERT INTO flyers (publicador, fechaInicio, fechaCaducidad, unDosVariosDias, titulo, masInfo, archivoFlyer) VALUES ('$publicador', '$fechainicio', '$fechacaducidad','$undosvariosdias','$titulodelflyer',	'$infodelflyer','$nombrito')";
-			
-				/*orden a la base de datos*/
-				$rs = mysql_query($orden, $con) or die("Hubo un error y la cosa no se publicó. Please feedback webmaster.");
+	//DATOS A SUBIR A LA MYSQL
+		
+		require '../configuracion.php';
+		
+		$fechainicio = $_POST['fechainicio'];	
+		$fechacaducidad = $_POST['fechacaducidad'];	
+		$titulodelflyer = securite_bdd($_POST['titulodelflyer']);	
+		$infodelflyer = securite_bdd(nl2br($_POST['infodelflyer']));//con nl2br permitimos saltos de línea
+		$undosvariosdias = $_POST['undosvariosdias'];
+		
+		//el kolectivo que está loggeado será el publicador:
+		session_start(); $publicador = securite_bdd($_SESSION['kol']);
+		
+		//SUBIMOS LOS DATOS DEL FLYER A LA MYSQL:
 
-	}
+		
+		$orden="INSERT INTO flyers (publicador, fechaInicio, fechaCaducidad, unDosVariosDias, titulo, masInfo, archivoFlyer) VALUES ('$publicador', '$fechainicio', '$fechacaducidad','$undosvariosdias','$titulodelflyer',	'$infodelflyer','$nombrito')";
+		
+			/*orden a la base de datos*/
+			$rs = mysql_query($orden, $con) or die("Hubo un error y la cosa no se publicó. Please feedback webmaster.");
+
+	
 	
 /*Salimos airosos*/
 print "<h3>Evento publicado con éxito!</h3>";
